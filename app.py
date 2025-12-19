@@ -10,6 +10,13 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
 
+# Vercel을 위한 데이터베이스 초기화
+with app.app_context():
+    try:
+        db.create_all()
+    except:
+        pass
+
 # 상담 문의 모델
 class Consultation(db.Model):
     id = db.Column(db.Integer, primary_key=True)
