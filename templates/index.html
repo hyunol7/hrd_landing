@@ -66,7 +66,7 @@
     <section class="penalty-section">
         <div class="container">
             <div class="alert-icon">
-                <img src="{{ url_for('static', filename='image/중요.png') }}" alt="경고" class="caution.png">
+                <img src="{{ url_for('static', filename='image/caution.png') }}" alt="경고" class="caution-image">
             </div>
             
             <div class="speech-bubble">
@@ -399,7 +399,7 @@
                 <div class="consultation-right">
                     <div class="consult-form-container">
                         <h3>무료 상담 신청하기</h3>
-                        <form id="bottomConsultForm" onsubmit="handleConsultSubmit(event)">
+                        <form id="bottomConsultForm">
                             <div class="consult-form-row">
                                 <div class="consult-form-group">
                                     <label>1. 기업명 *</label>
@@ -410,12 +410,13 @@
                                 <div class="consult-form-group">
                                     <label>2. 연락처 *</label>
                                     <div class="phone-input-group">
-                                        <input type="text" class="phone-part" placeholder="010" maxlength="3" required>
+                                        <input type="text" id="phone1" class="phone-part" placeholder="010" maxlength="3" required>
                                         <span>-</span>
-                                        <input type="text" class="phone-part" placeholder="앞자리" maxlength="4" required>
+                                        <input type="text" id="phone2" class="phone-part" placeholder="앞자리" maxlength="4" required>
                                         <span>-</span>
-                                        <input type="text" class="phone-part" placeholder="뒷자리" maxlength="4" required>
+                                        <input type="text" id="phone3" class="phone-part" placeholder="뒷자리" maxlength="4" required>
                                     </div>
+                                    <input type="hidden" name="contact_number" id="hiddenContactNumber">
                                 </div>
                                 <div class="consult-form-group">
                                     <label>3. 담당자 성함 *</label>
@@ -430,13 +431,23 @@
                             </div>
                             <div class="consult-checkbox">
                                 <label>
-                                    <input type="checkbox" required>
-                                    <span>[필수] 개인정보수집동의 <a href="#">자세히보기</a></span>
+                                    <input type="checkbox" id="bottomPrivacyConsent" required>
+                                    <span>[필수] 개인정보수집동의</span>
                                 </label>
+                                <button type="button" class="privacy-detail-btn" onclick="togglePrivacyDetail()">자세히보기</button>
+                            </div>
+                            
+                            <div class="privacy-detail" id="privacyDetail" style="display: none; margin-top: 10px; padding: 15px; background: #f8f9fa; border-radius: 8px; font-size: 0.85rem;">
+                                <p><strong>개인정보 수집 및 이용 동의</strong></p>
+                                <p>• 수집하는 개인정보 항목: 기업명, 연락처, 담당자명, 문의내용</p>
+                                <p>• 개인정보 수집 및 이용목적: 교육 상담 및 문의 응대</p>
+                                <p>• 개인정보 보유 및 이용기간: 문의 접수 후 1년</p>
+                                <p>• 동의를 거부할 권리가 있으며, 거부 시 상담 서비스 이용이 제한됩니다.</p>
                             </div>
                             <button type="submit" class="consult-submit-btn">
                                 무료 상담 신청하기 →
                             </button>
+
                         </form>
                     </div>
                 </div>

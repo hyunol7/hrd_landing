@@ -225,6 +225,71 @@ window.addEventListener('scroll', function() {
     });
 });
 
+// 맨 아래 상담 폼 제출 처리
+async function handleBottomConsultSubmit(event) {
+    event.preventDefault();
+    
+    const form = event.target;
+    const submitBtn = form.querySelector('.consult-submit-btn');
+    
+    // 개인정보 동의 확인
+    const privacyConsent = document.getElementById('bottomPrivacyConsent');
+    if (!privacyConsent.checked) {
+        alert('개인정보 수집 및 이용에 동의해주세요.');
+        return;
+    }
+    
+    // 전화번호 3개 합치기
+    const phone1 = document.getElementById('phone1').value.trim();
+    const phone2 = document.getElementById('phone2').value.trim();
+    const phone3 = document.getElementById('phone3').value.trim();
+    
+    if (!phone1 || !phone2 || !phone3) {
+        alert('연락처를 모두 입력해주세요.');
+        return;
+    }
+    
+    const fullPhone = `${phone1}-${phone2}-${phone3}`;
+    
+    // 로딩 상태
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = '전송중...';
+    
+    try {
+        const formData = {
+            company_name: form.querySelector('[name="company_name"]').value.trim(),
+            contact_number: fullPhone,
+            manager_name: form.querySelector('[name="manager_name"]').value.trim(),
+            inquiry_content: form.querySelector('[name="inquiry_content"]').value.trim() || ''
+        };
+        
+        const response = await fetch('/consultation', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            alert('✅ 상담 문의가 성공적으로 접수되었습니다!\n담당자가 빠른 시일 내에 연락드리겠습니다.');
+            form.reset();
+        } else {
+            alert(result.message || '문의 전송 중 오류가 발생했습니다.');
+        }
+        
+    } catch (error) {
+        console.error('오류:', error);
+        alert('문의 전송 중 오류가 발생했습니다. 다시 시도해주세요.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+    }
+}
+
 // 초기 스타일 설정
 document.addEventListener('DOMContentLoaded', function() {
     const elements = document.querySelectorAll('.feature-card, .course-card, .faq-item');
@@ -239,5 +304,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         openConsultPopup();
     }, 500);
+    
+    // 맨 아래 상담 폼 이벤트 리스너
+    const bottomForm = document.getElementById('bottomConsultForm');
+    if (bottomForm) {
+        bottomForm.addEventListener('submit', handleBottomConsultSubmit);
+    }
 });
 
