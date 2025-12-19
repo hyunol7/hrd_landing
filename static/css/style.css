@@ -727,7 +727,7 @@ body {
 }
 
 .caution-image {
-    width: 100px;
+    width: 70px;
     height: auto;
     display: block;
     margin: 20px auto 30px auto;
@@ -820,7 +820,7 @@ body {
 /* 반응형 - 과태료 섹션 */
 @media (max-width: 1024px) {
     .caution-image {
-        width: 90px;
+        width: 65px;
         margin: 15px auto 25px auto;
     }
     
@@ -852,7 +852,7 @@ body {
     }
     
     .caution-image {
-        width: 80px;
+        width: 60px;
         margin: 15px auto 20px auto;
     }
     
@@ -890,7 +890,7 @@ body {
     }
     
     .caution-image {
-        width: 60px;
+        width: 50px;
         margin: 10px auto 15px auto;
     }
     
