@@ -231,6 +231,7 @@ async function handleBottomConsultSubmit(event) {
     
     const form = event.target;
     const submitBtn = form.querySelector('.consult-submit-btn');
+    const submitText = submitBtn.querySelector('.submit-text');
     
     // 개인정보 동의 확인
     const privacyConsent = document.getElementById('bottomPrivacyConsent');
@@ -252,9 +253,8 @@ async function handleBottomConsultSubmit(event) {
     const fullPhone = `${phone1}-${phone2}-${phone3}`;
     
     // 로딩 상태
-    const originalText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = '전송중...';
+    submitText.textContent = '전송중...';
     
     try {
         const formData = {
@@ -264,7 +264,8 @@ async function handleBottomConsultSubmit(event) {
             inquiry_content: form.querySelector('[name="inquiry_content"]').value.trim() || ''
         };
         
-        const response = await fetch('/consultation', {
+        // 1. 서버 DB (Supabase)에 저장
+        const dbResponse = await fetch('/consultation', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -272,13 +273,33 @@ async function handleBottomConsultSubmit(event) {
             body: JSON.stringify(formData)
         });
         
-        const result = await response.json();
+        const dbResult = await dbResponse.json();
         
-        if (result.status === 'success') {
+        // 2. 구글 시트에도 저장 (선택사항)
+        if (GOOGLE_SHEET_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+            try {
+                const sheetData = new URLSearchParams();
+                sheetData.append('company_name', formData.company_name);
+                sheetData.append('contact_number', formData.contact_number);
+                sheetData.append('manager_name', formData.manager_name);
+                sheetData.append('inquiry_content', formData.inquiry_content);
+                sheetData.append('timestamp', new Date().toLocaleString('ko-KR'));
+                
+                await fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: sheetData
+                });
+            } catch (sheetError) {
+                console.log('구글 시트 저장 실패 (DB에는 저장됨):', sheetError);
+            }
+        }
+        
+        if (dbResult.status === 'success') {
             alert('✅ 상담 문의가 성공적으로 접수되었습니다!\n담당자가 빠른 시일 내에 연락드리겠습니다.');
             form.reset();
         } else {
-            alert(result.message || '문의 전송 중 오류가 발생했습니다.');
+            alert(dbResult.message || '문의 전송 중 오류가 발생했습니다.');
         }
         
     } catch (error) {
@@ -286,7 +307,7 @@ async function handleBottomConsultSubmit(event) {
         alert('문의 전송 중 오류가 발생했습니다. 다시 시도해주세요.');
     } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = originalText;
+        submitText.textContent = '문의하기';
     }
 }
 
