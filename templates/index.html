@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRD코리아 - 관리감독자교육</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="#home">
+                    <img src="{{ url_for('static', filename='image/HRDKorea.png') }}" alt="HRD코리아" class="logo-image">
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="#home">홈</a>
+                <a href="#about">교육원소개</a>
+                <a href="#course">교육안내</a>
+                <a href="#quick-services">빠른서비스</a>`
+                <a href="#faq">자주묻는질문</a>
+                <a href="#partners">관련기관</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 히어로 섹션 -->
+    <section id="home" class="modern-hero">
+        <!-- 떠다니는 태그들 -->
+        <div class="floating-tag" style="top: 15%; left: 15%;">Safety</div>
+        <div class="floating-tag" style="top: 25%; right: 10%;">Education</div>
+        <div class="floating-tag" style="top: 45%; left: 8%;">Training</div>
+        <div class="floating-tag" style="bottom: 35%; right: 15%;">Legal</div>
+        <div class="floating-tag" style="bottom: 20%; right: 45%;">HRD</div>
+        
+        <div class="hero-container">
+            <h1 class="hero-main-title">
+                <div class="big-slogan">Safety C<span class="gradient-com">om</span>es First</div><br>
+            </h1>
+            <p class="hero-description">
+                기업 의무 교육을 한 곳에서 쉽고 편리하게 들을 수 있습니다.
+            </p>
+            
+            <!-- 교육 박스 섹션 -->
+            <div class="hero-education-boxes">
+                <div class="edu-box">
+                    <span class="edu-text">정기안전보건교육</span>
+                </div>
+                <div class="edu-box">
+                    <span class="edu-text">관리감독자 교육</span>
+                </div>
+                <div class="edu-box">
+                    <span class="edu-text">법정 5대 교육</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 과태료 경고 섹션 -->
+    <section class="penalty-section">
+        <div class="container">
+            <div class="alert-icon">
+                <img src="{{ url_for('static', filename='image/중요.png') }}" alt="경고" class="caution-image">
+            </div>
+            
+            <div class="speech-bubble">
+                <p class="bubble-text">혹시 올해 <span class="highlight-red">'관리감독자 교육'</span> 실시하셨나요?</p>
+            </div>
+            
+            <div class="penalty-info">
+                <p class="penalty-warning">교육 미이수 시 과태료 최대 500만원이라는 사실</p>
+                <p class="penalty-detail">
+                    산업안전보건법 시행령에 따라 미이수 시 관리감독자 1명당<br>
+                    <strong>1차 위반 50만원, 2차 위반 250만원, 3차 위반 500만원</strong>의 과태료가 부과됩니다.
+                </p>
+            </div>
+        </div>
+    </section>
+   
+   
+    <!-- 교육 특징 -->
+    <section id="about" class="features-section">
+        <div class="container">
+            <h2 class="section-title">아직도 현장에 직접 가서 교육을 듣고 계신가요?</h2>
+            <p class="section-subtitle">화상 / 우편 / 집체 등 원하는 방식 모두 지원 가능</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>화상교육</h3>
+                    <p>줌을 통한 실시간 온라인 교육<br>편안한 장소에서 수강 가능</p>
+                    <ul class="feature-details">
+                        <li>실시간 양방향 소통</li>
+                        <li>PC, 모바일 모두 가능</li>
+                        <li>교육장 이동 불필요</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>우편교육</h3>
+                    <p>교육 자료 수령 후 자가학습<br>온라인 시험으로 간편하게</p>
+                    <ul class="feature-details">
+                        <li>교육 교안 우편 발송</li>
+                        <li>자율적 학습 시간</li>
+                        <li>온라인 시험 응시</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>집체교육</h3>
+                    <p>교육장 방문 대면교육<br>전문 강사의 심화 교육</p>
+                    <ul class="feature-details">
+                        <li>대면 실습 교육</li>
+                        <li>현장 중심 교육</li>
+                        <li>즉시 질의응답</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <h3>강사파견</h3>
+                    <p>집체 교육 시 전문 강사 파견으로 더욱 실전형 교육 제공</p>
+                    <ul class="feature-details">
+                        <li>유연한 교육 방식</li>
+                        <li>효율적 시간 활용</li>
+                        <li>맞춤형 교육 설계</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 왜 선택해야 할까요 섹션 -->
+    <section id="why-choose" class="why-choose-section">
+        <div class="container">
+            <h2 class="section-title">왜 HRD코리아에서<br>교육을 들어야 할까요?</h2>
+        
+            
+            <!-- 강점 카드 -->
+            <div class="advantage-grid">
+                <div class="advantage-card-horizontal">
+                    <div class="advantage-content">
+                        <div class="advantage-label">합리적인 가격</div>
+                        <h3>예산에 맞춘 합리적인 가격</h3>
+                        <p>비대면 강의로 간편하게 수강하고 우편교육 혼합으로 초간편 수료</p>
+                    </div>
+                    <div class="advantage-image">
+                        <img src="{{ url_for('static', filename='image/4.png') }}" alt="합리적인 가격">
+                    </div>
+                </div>
+                
+                <div class="advantage-card-horizontal">
+                    <div class="advantage-content">
+                        <div class="advantage-label">교육 당일 수료증 발급</div>
+                        <h3>교육당일 즉시 수료증 발급</h3>
+                        <p>화상교육 : 교육당일 18시부터 수료증 즉시 발급<br>우편교육 : 우편 시험 수료 후 즉시 발급</p>
+                    </div>
+                    <div class="advantage-image">
+                        <img src="{{ url_for('static', filename='image/1.png') }}" alt="수료증 발급">
+                    </div>
+                </div>
+                
+                <div class="advantage-card-horizontal">
+                    <div class="advantage-content">
+                        <div class="advantage-label">담당자 페이지</div>
+                        <h3>담당자 페이지에서 직원의 수료현황 실시간으로 확인 가능</h3>
+                        <p>전문 교육 담당자가 수강일정을 컨설팅해주고 [내강의실]에서 직접 변경도 무제한으로 가능!</p>
+                    </div>
+                    <div class="advantage-image">
+                        <img src="{{ url_for('static', filename='image/2.png') }}" alt="담당자 페이지">
+                    </div>
+                </div>
+  
+                <div class="advantage-card-horizontal">
+                    <div class="advantage-content">
+                        <div class="advantage-label">✓ 믿을 수 있는 법정의무교육기관</div>
+                        <h3>고용노동부 인증 원격평생교육시설</h3>
+                    </div>
+                    <div class="advantage-image">
+                        <img src="{{ url_for('static', filename='image/3.png') }}" alt="담당자 페이지">
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+
+    <!-- 교육 과정 -->
+    <section id="course" class="courses-section">
+        <div class="container">
+            <h2 class="section-title">교육 과정 안내</h2>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <h3>관리감독자 정기교육</h3>
+                    <div class="course-info">
+                        <p class="course-time">⏱️ 무재해(8시간) / 재해(16시간)</p>
+                        <p class="course-desc">생산 관련 업무 및 소속 직원을 직접 지휘·감독하는 직위에 있는 사람</p>
+                        <ul class="course-methods">
+                            <li>✓ 화상교육 4(8)시간 + 우편교육 4(8)시간</li>
+                            <li>✓ 화상교육 4(8)시간 + 원격교육 4(8)시간</li>
+                            <li>✓ 집체교육 8(16)시간</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <h3>근로자 정기교육</h3>
+                    <div class="course-info">
+                        <p class="course-time">⏱️ 상 하반기 총 2회</p>
+                        <p class="course-desc">사무직 및 일반 근로자 안전보건교육</p>
+                        <ul class="course-methods">
+                            <li>✓ 원격교육 (사무직 분기 3시간)</li>
+                            <li>✓ 집체교육 (일반 분기 6시간)</li>
+                            <li>✓ 혼합교육 (원격 + 집체)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <h3>5대 법정의무교육</h3>
+                    <div class="course-info">
+                        <p class="course-time">⏱️ 연 1회</p>
+                        <p class="course-desc">직장 내 괴롭힘 방지, 성희롱 예방, 개인정보보호, 장애인 인식개선, 퇴직연금 </p>
+                        <ul class="course-methods">
+                            <li>✓ 온라인 교육</li>
+                            <li>✓ 집합 교육</li>
+                            <li>✓ 통합 교육 가능</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">자주 묻는 질문</h2>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(0)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">줌 화상교육 시간 편성이 어떻게 되나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>16시간 혼합교육 / 화상교육 8시간 신청자 : 9:00~18:00 (점심시간 1시간 포함)<br>
+                        8시간 혼합교육 : 9:00~14:00(오전) / 14:00~18:00(오후)</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(1)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">집체교육 대신에 화상교육으로 실시할 수 있나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 안전보건교육규정의 개정으로 가능합니다. (2023.2.21 개정)</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(2)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">수료증 발급은 어디서 하나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>교육 100% 이수 시 당일 발급 가능합니다.<br>
+                        수료증 발급 경로: 내강의실 - [학습종료]에서 발급 가능합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(3)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">관리감독자란 구체적으로 누구를 의미하나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>산업안전보건법 제16조에 따르면, 관리감독자란 "사업장의 생산과 관련되는 업무와 그 소속 직원을 직접 지휘·감독하는 직위에 있는 사람"을 의미합니다.<br>
+                        건설현장의 경우 주로 시공과 관련된 부서의 직·조·반장, 공사 과장·부장 등이 해당됩니다. (특별한 자격기준 없음)</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(4)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">교육시간 전체를 우편교육이나 원격(동영상시청)교육으로 이수할 수 있나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>우편교육 또는 원격교육은 총 교육시간의 50%만 인정됩니다.<br>
+                        따라서, 전년도 무재해 사업장은 원격교육 50% + 화상 또는 집체교육 50%로 이수해야 합니다.<br>
+                        예) 화상교육 4시간 + 원격(동영상시청)교육 4시간</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(5)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">우편교육 시험은 어떻게 응시하나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p><strong>우편교육 시험 응시 방법:</strong><br>
+                        1. "화상" 교육 완료<br>
+                        2. 당일 오후 6시 이후 홈페이지 접속<br>
+                        3. 아이디 및 비밀번호로 로그인<br>
+                        4. 내 강의실 - 학습 중인 수업 클릭<br>
+                        5. 혼합(화상+우편) 과정 선택<br>
+                        6. [(우편)교육 교안] 내려받기<br>
+                        7. [시험 응시] 버튼 클릭<br>
+                        8. 본인인증 후 최종평가 응시</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(6)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">관리감독자가 사업장 이동 시 교육을 다시 받아야 하나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>관리감독자 정기교육(16시간)은 부서가 이동되거나 소속 사업장의 근무 장소가 변경되더라도 기존에 받은 교육 시간이 인정됩니다.<br>
+                        다만, 부서 이동 또는 소속 사업장의 근무 장소 변경으로 인해 작업환경, 업무 내용 등이 변경된 경우에는 산업안전보건법 제29조 제2항에 따라 작업내용 변경 시 교육(2시간)을 이수하여야 합니다.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(7)">
+                        <span class="faq-q">Q</span>
+                        <span class="faq-text">줌 이용 매뉴얼이 있나요?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>네, 줌 사용법 안내 자료를 제공하고 있습니다.<br>
+                        홈페이지 공지사항에서 "줌 사용법" 또는 "화상교육 안내"를 검색하시면 상세한 매뉴얼을 확인하실 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 관련 기관 링크 -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2 class="section-title">관련 기관</h2>
+            <div class="partners-grid">
+                <a href="https://www.moel.go.kr" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>고용노동부</p>
+                    </div>
+                </a>
+                <a href="https://www.kosha.or.kr" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>한국산업안전보건공단</p>
+                    </div>
+                </a>
+                <a href="https://www.kras.go.kr" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>KRAS<br>위험성평가 시스템</p>
+                    </div>
+                </a>
+                <a href="https://www.law.go.kr" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>법제처</p>
+                    </div>
+                </a>
+                <a href="https://www.kosha.or.kr/kosha/data/musculoskeletalPreventionData.do" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>안전보건자료실</p>
+                    </div>
+                </a>
+                <a href="https://www.kcomwel.or.kr/kcomwel/sai/saib/selectSeriousAccidentPunishmentAct.do" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>중대재해처벌법<br>바로알기</p>
+                    </div>
+                </a>
+                <a href="https://www.kead.or.kr" target="_blank" class="partner-link">
+                    <div class="partner-box">
+                        <p>한국장애인고용공단</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 맨 아래 상담문의 섹션 -->
+    <section class="bottom-consultation-section">
+        <div class="container">
+            <div class="consultation-container">
+        
+                <div class="consultation-right">
+                    <div class="consult-form-container">
+                        <h3>무료 상담 신청하기</h3>
+                        <form id="bottomConsultForm" onsubmit="handleConsultSubmit(event)">
+                            <div class="consult-form-row">
+                                <div class="consult-form-group">
+                                    <label>1. 기업명 *</label>
+                                    <input type="text" name="company_name" required placeholder="기업명을 입력해주세요">
+                                </div>
+                            </div>
+                            <div class="consult-form-row">
+                                <div class="consult-form-group">
+                                    <label>2. 연락처 *</label>
+                                    <div class="phone-input-group">
+                                        <input type="text" class="phone-part" placeholder="010" maxlength="3" required>
+                                        <span>-</span>
+                                        <input type="text" class="phone-part" placeholder="앞자리" maxlength="4" required>
+                                        <span>-</span>
+                                        <input type="text" class="phone-part" placeholder="뒷자리" maxlength="4" required>
+                                    </div>
+                                </div>
+                                <div class="consult-form-group">
+                                    <label>3. 담당자 성함 *</label>
+                                    <input type="text" name="manager_name" required placeholder="담당자 본인 성함을 입력해주세요">
+                                </div>
+                            </div>
+                            <div class="consult-form-row">
+                                <div class="consult-form-group full-width">
+                                    <label>4. 문의사항</label>
+                                    <textarea name="inquiry_content" rows="4" placeholder="문의하실 내용을 입력하세요 (선택사항)"></textarea>
+                                </div>
+                            </div>
+                            <div class="consult-checkbox">
+                                <label>
+                                    <input type="checkbox" required>
+                                    <span>[필수] 개인정보수집동의 <a href="#">자세히보기</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="consult-submit-btn">
+                                무료 상담 신청하기 →
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 하단 고정 버튼 -->
+    <div class="bottom-bar">
+        <div class="contact-info">
+            <span>📞 1551-0811</span>
+            <span>실시간 전화상담 가능</span>
+        </div>
+    </div>
+
+
+    <!-- 왼쪽 탭 버튼 (팝업 닫혔을 때 표시) -->
+    <button class="popup-tab-btn" id="popupTab" onclick="openConsultPopup()" style="display: none;">
+        <span>상담<br>문의</span>
+    </button>
+
+    <!-- 사이드 팝업 상담 폼 -->
+    <div class="consult-popup-overlay" id="consultPopup">
+        <div class="consult-popup">
+            <div class="popup-header">
+                <h2>빠른상담문의</h2>
+                <button class="popup-close" onclick="closeConsultPopup()">&times;</button>
+            </div>
+            
+            <div class="popup-body">
+                <form id="consultForm" onsubmit="handleConsultSubmit(event)">
+                    <div class="popup-form-group">
+                        <label for="companyName">1. 기업명 <span class="required">*</span></label>
+                        <input type="text" id="companyName" name="company_name" required placeholder="기업명을 입력하세요">
+                    </div>
+                    
+                    <div class="popup-form-group">
+                        <label for="contactNumber">2. 연락처 <span class="required">*</span></label>
+                        <p>이메일을 작성해주셔도 됩니다.</p>
+                        <input type="text" id="contactNumber" name="contact_number" required placeholder="010-0000-0000">
+                    </div>
+                    
+                    <div class="popup-form-group">
+                        <label for="managerName">3. 담당자 성함 <span class="required">*</span></label>
+                        <input type="text" id="managerName" name="manager_name" required placeholder="담당자 성함을 입력하세요">
+                    </div>
+                    
+                    <div class="popup-form-group">
+                        <label for="inquiryContent">4. 문의사항</label>
+                        <textarea id="inquiryContent" name="inquiry_content" rows="4" placeholder="문의하실 내용을 입력하세요 (선택사항)"></textarea>
+                    </div>
+                    
+                    <div class="popup-privacy">
+                        <label class="privacy-checkbox-label">
+                            <input type="checkbox" id="privacyConsent" required>
+                            <span>[필수] 개인정보수집동의</span>
+                        </label>
+                        <button type="button" class="privacy-detail-btn" onclick="togglePrivacyDetail()">자세히보기</button>
+                    </div>
+                    
+                    <div class="privacy-detail" id="privacyDetail">
+                        <p><strong>개인정보 수집 및 이용 동의</strong></p>
+                        <p>• 수집하는 개인정보 항목: 기업명, 연락처, 담당자명, 문의내용</p>
+                        <p>• 개인정보 수집 및 이용목적: 교육 상담 및 문의 응대</p>
+                        <p>• 개인정보 보유 및 이용기간: 문의 접수 후 1년</p>
+                        <p>• 동의를 거부할 권리가 있으며, 거부 시 상담 서비스 이용이 제한됩니다.</p>
+                    </div>
+                    
+                    <button type="submit" class="popup-submit-btn">
+                        <span class="submit-text">문의하기</span>
+                        <span class="submit-loading" style="display: none;">전송중...</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
