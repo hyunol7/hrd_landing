@@ -300,12 +300,27 @@ body {
 /* 반응형 - 모바일 */
 @media (max-width: 768px) {
     .modern-hero {
-        min-height: 90vh;
-        padding: 40px 20px 30px 20px;
+        min-height: auto;
+        padding: 30px 15px 40px 15px;
     }
     
     .hero-container {
-        margin-top: -20px;
+        margin-top: 0;
+    }
+    
+    .big-slogan {
+        font-size: 2.5rem;
+        margin-top: 0;
+        margin-bottom: -10px;
+        line-height: 1.2;
+    }
+    
+    .company-name-spacer {
+        height: 25px;
+    }
+    
+    .safety-company-name {
+        font-size: 1rem;
     }
     
     .hero-main-title {
@@ -325,12 +340,16 @@ body {
     }
     
     .hero-education-boxes {
-        gap: 15px;
+        gap: 12px;
         margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
     }
     
     .edu-box {
-        min-width: 170px;
+        min-width: 250px;
+        width: 80%;
+        max-width: 300px;
         padding: 14px 30px;
     }
     
@@ -339,23 +358,40 @@ body {
     }
     
     .floating-tag {
-        font-size: 0.75rem;
-        padding: 6px 12px;
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
+    .modern-hero {
+        padding: 20px 10px 30px 10px;
+    }
+    
     .hero-container {
-        margin-top: -15px;
+        margin-top: 0;
+    }
+    
+    .big-slogan {
+        font-size: 2rem;
+        margin-top: 0;
+        margin-bottom: -8px;
+    }
+    
+    .company-name-spacer {
+        height: 20px;
+    }
+    
+    .safety-company-name {
+        font-size: 0.9rem;
     }
     
     .hero-main-title {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         margin-bottom: 12px;
     }
     
     .hero-description {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         margin-bottom: 20px;
     }
     
@@ -365,7 +401,8 @@ body {
     }
     
     .edu-box {
-        min-width: 150px;
+        min-width: 220px;
+        width: 85%;
         padding: 12px 25px;
     }
     
@@ -2274,6 +2311,17 @@ body {
     background: #f8f9fa;
     box-shadow: 0 10px 30px rgba(0,82,163,0.15);
     transform: translateY(-5px);
+}
+
+.partner-box.partner-with-image {
+    flex-direction: column;
+    gap: 12px;
+}
+
+.partner-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
 }
 
 .partner-box p {

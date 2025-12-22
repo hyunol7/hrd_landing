@@ -321,10 +321,12 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
     
-    // 페이지 로드 시 상담 팝업 자동으로 열기
-    setTimeout(function() {
-        openConsultPopup();
-    }, 500);
+    // 페이지 로드 시 상담 팝업 자동으로 열기 (데스크톱만)
+    if (window.innerWidth > 768) {
+        setTimeout(function() {
+            openConsultPopup();
+        }, 500);
+    }
     
     // 맨 아래 상담 폼 이벤트 리스너
     const bottomForm = document.getElementById('bottomConsultForm');
