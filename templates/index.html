@@ -49,9 +49,11 @@
             
             <!-- 교육 박스 섹션 -->
             <div class="hero-education-boxes">
-                <div class="edu-box">
-                    <span class="edu-text">정기안전보건교육</span>
-                </div>
+                <a href="http://localhost:5000" target="_blank" class="edu-box-link">
+                    <div class="edu-box">
+                        <span class="edu-text">정기안전보건교육</span>
+                    </div>
+                </a>
                 <div class="edu-box">
                     <span class="edu-text">관리감독자 교육</span>
                 </div>
@@ -87,7 +89,7 @@
     <!-- 교육 특징 -->
     <section id="about" class="features-section">
         <div class="container">
-            <h2 class="section-title">아직도 현장에 직접 가서 교육을 듣고 계신가요?</h2>
+            <h2 class="section-title">HRD코리아는 어떤 교육을 제공하나요?</h2>
             <p class="section-subtitle">화상 / 우편 / 집체 등 원하는 방식 모두 지원 가능</p>
             
             <div class="features-grid">
@@ -101,7 +103,7 @@
                     </ul>
                 </div>
                 <div class="feature-card">
-                    <h3>우편교육</h3>
+                    <h3>우편통신교육</h3>
                     <p>교육 자료 수령 후 자가학습<br>온라인 시험으로 간편하게</p>
                     <ul class="feature-details">
                         <li>교육 교안 우편 발송</li>
@@ -118,14 +120,45 @@
                         <li>즉시 질의응답</li>
                     </ul>
                 </div>
-                <div class="feature-card">
-                    <h3>강사파견</h3>
-                    <p>집체 교육 시 전문 강사 파견으로 더욱 실전형 교육 제공</p>
-                    <ul class="feature-details">
-                        <li>유연한 교육 방식</li>
-                        <li>효율적 시간 활용</li>
-                        <li>맞춤형 교육 설계</li>
-                    </ul>
+            </div>
+            
+            <!-- 교육시간 비교표 -->
+            <div class="education-time-table">
+                <h3 class="table-title">교육 시간 안내</h3>
+                <div class="time-table-wrapper">
+                    <table class="time-table">
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>신규 사업장 또는<br>전년도 재해 사업장</th>
+                                <th>전년도 무재해 사업장</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="category">총 교육시간</td>
+                                <td class="time-info">16시간</td>
+                                <td class="time-info">8시간<br><span class="sub-note">*이래 2개 과정 중 택 1</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td class="category">신청과정</td>
+                                <td class="course-info">
+                                    <div class="course-badge blue">온라인과정 16시간</div>
+                                    <span class="course-detail">(학습과정 8시간 + 우편과정 8시간)</span>
+                                </td>
+                                <td class="course-options">
+                                    <div class="course-badge yellow">
+                                        <div class="course-badge-title">온라인과정 8시간</div>
+                                        <div>화상교육 8시간</div>
+                                    </div>
+                                    <div class="course-badge green">
+                                        <div class="course-badge-title">온라인과정 16시간</div>
+                                        <div>(학습과정 4시간 + 우편과정 4시간)</div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -362,7 +395,7 @@
                         <p>한국산업안전보건공단</p>
                     </div>
                 </a>
-                <a href="https://www.kras.go.kr" target="_blank" class="partner-link">
+                <a href="https://portal.kosha.or.kr/kras/evaluation/outline" target="_blank" class="partner-link">
                     <div class="partner-box">
                         <p>KRAS<br>위험성평가 시스템</p>
                     </div>
@@ -372,12 +405,12 @@
                         <p>법제처</p>
                     </div>
                 </a>
-                <a href="https://www.kosha.or.kr/kosha/data/musculoskeletalPreventionData.do" target="_blank" class="partner-link">
+                <a href="https://portal.kosha.or.kr/archive/cent-archive/master-arch" target="_blank" class="partner-link">
                     <div class="partner-box">
                         <p>안전보건자료실</p>
                     </div>
                 </a>
-                <a href="https://www.kcomwel.or.kr/kcomwel/sai/saib/selectSeriousAccidentPunishmentAct.do" target="_blank" class="partner-link">
+                <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=228817#0000" target="_blank" class="partner-link">
                     <div class="partner-box">
                         <p>중대재해처벌법<br>바로알기</p>
                     </div>
@@ -457,7 +490,9 @@
     <!-- 하단 고정 버튼 -->
     <div class="bottom-bar">
         <div class="contact-info">
-            <span>📞 1551-0811</span>
+            <a href="tel:1551-0811" class="phone-link">
+                <span>📞 1551-0811</span>
+            </a>
             <span>실시간 전화상담 가능</span>
         </div>
     </div>

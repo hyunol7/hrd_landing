@@ -74,3 +74,5 @@ python app.py
 - Vercel 무료 플랜: 월 100GB 대역폭
 - 충분히 사용 가능합니다!
 
+
+
