@@ -21,6 +21,7 @@
             </div>
             <nav class="nav">
                 <a href="#home">홈</a>
+                <a href="#about">관리감독자 교육</a>
                 <a href="#about">교육원소개</a>
                 <a href="#course">교육안내</a>
                 <a href="#quick-services">빠른서비스</a>
@@ -130,7 +131,7 @@
                         <thead>
                             <tr>
                                 <th>구분</th>
-                                <th>신규 사업장 또는<br>전년도 재해 사업장</th>
+                                <th>전년도 재해 사업장</th>
                                 <th>전년도 무재해 사업장</th>
                             </tr>
                         </thead>
@@ -143,17 +144,16 @@
                             <tr class="highlight-row">
                                 <td class="category">신청과정</td>
                                 <td class="course-info">
-                                    <div class="course-badge blue">온라인과정 16시간</div>
-                                    <span class="course-detail">(학습과정 8시간 + 우편과정 8시간)</span>
+                                    <div class="course-badge blue">혼합과정 16시간</div>
+                                    <span class="course-detail">(우편교육 8시간 + 화상교육 8시간)</span>
                                 </td>
                                 <td class="course-options">
                                     <div class="course-badge yellow">
-                                        <div class="course-badge-title">온라인과정 8시간</div>
-                                        <div>화상교육 8시간</div>
+                                        <div class="course-badge-title">화상 교육 8시간</div>
                                     </div>
                                     <div class="course-badge green">
-                                        <div class="course-badge-title">온라인과정 16시간</div>
-                                        <div>(학습과정 4시간 + 우편과정 4시간)</div>
+                                        <div class="course-badge-title">혼합과정 8시간</div>
+                                        <div>(온라인 교육 4시간 + 화상교육 4시간)</div>
                                     </div>
                                 </td>
                             </tr>
@@ -176,7 +176,6 @@
                     <div class="advantage-content">
                         <div class="advantage-label">합리적인 가격</div>
                         <h3>예산에 맞춘 합리적인 가격</h3>
-                        <p>비대면 강의로 간편하게 수강하고 우편교육 혼합으로 초간편 수료</p>
                     </div>
                     <div class="advantage-image">
                         <img src="{{ url_for('static', filename='image/4.png') }}" alt="합리적인 가격">
@@ -187,7 +186,6 @@
                     <div class="advantage-content">
                         <div class="advantage-label">교육 당일 수료증 발급</div>
                         <h3>교육당일 즉시 수료증 발급</h3>
-                        <p>화상교육 : 교육당일 18시부터 수료증 즉시 발급<br>우편교육 : 우편 시험 수료 후 즉시 발급</p>
                     </div>
                     <div class="advantage-image">
                         <img src="{{ url_for('static', filename='image/1.png') }}" alt="수료증 발급">
@@ -197,8 +195,7 @@
                 <div class="advantage-card-horizontal">
                     <div class="advantage-content">
                         <div class="advantage-label">담당자 페이지</div>
-                        <h3>담당자 페이지에서 직원의 수료현황 실시간으로 확인 가능</h3>
-                        <p>전문 교육 담당자가 수강일정을 컨설팅해주고 [내강의실]에서 직접 변경도 무제한으로 가능!</p>
+                        <h3>담당자 페이지에서 <br>직원의 수료현황 <br>실시간으로 확인 가능</h3>
                     </div>
                     <div class="advantage-image">
                         <img src="{{ url_for('static', filename='image/2.png') }}" alt="담당자 페이지">
@@ -208,7 +205,7 @@
                 <div class="advantage-card-horizontal">
                     <div class="advantage-content">
                         <div class="advantage-label">✓ 믿을 수 있는 법정의무교육기관</div>
-                        <h3>고용노동부 인증 원격평생교육시설</h3>
+                        <h3>고용노동부 인증 <br>원격평생교육시설</h3>
                     </div>
                     <div class="advantage-image">
                         <img src="{{ url_for('static', filename='image/3.png') }}" alt="담당자 페이지">
@@ -388,37 +385,33 @@
                 <a href="https://www.moel.go.kr" target="_blank" class="partner-link">
                     <div class="partner-box partner-with-image">
                         <img src="{{ url_for('static', filename='image/고용노동부.png') }}" alt="고용노동부" class="partner-logo">
-                        <p>고용노동부</p>
                     </div>
                 </a>
                 <a href="https://www.kosha.or.kr" target="_blank" class="partner-link">
-                    <div class="partner-box">
-                        <p>한국산업안전보건공단</p>
+                    <div class="partner-box partner-with-image">
+                        <img src="{{ url_for('static', filename='image/안전보건공단.png') }}" alt="고용노동부" class="partner-logo">
                     </div>
                 </a>
                 <a href="https://portal.kosha.or.kr/kras/evaluation/outline" target="_blank" class="partner-link">
-                    <div class="partner-box">
-                        <p>KRAS<br>위험성평가 시스템</p>
+                    <div class="partner-box partner-with-image">
+                        <img src="{{ url_for('static', filename='image/kras.png') }}" alt="고용노동부" class="partner-logo">
                     </div>
                 </a>
+
                 <a href="https://www.law.go.kr" target="_blank" class="partner-link">
-                    <div class="partner-box">
-                        <p>법제처</p>
+                    <div class="partner-box partner-with-image">
+                        <img src="{{ url_for('static', filename='image/법제처.png') }}" alt="고용노동부" class="partner-logo">
                     </div>
                 </a>
-                <a href="https://portal.kosha.or.kr/archive/cent-archive/master-arch" target="_blank" class="partner-link">
-                    <div class="partner-box">
-                        <p>안전보건자료실</p>
-                    </div>
-                </a>
+               
                 <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=228817#0000" target="_blank" class="partner-link">
-                    <div class="partner-box">
-                        <p>중대재해처벌법<br>바로알기</p>
+                    <div class="partner-box partner-with-image">
+                        <img src="{{ url_for('static', filename='image/중대해처벌.png') }}" alt="고용노동부" class="partner-logo">
                     </div>
                 </a>
                 <a href="https://www.kead.or.kr" target="_blank" class="partner-link">
-                    <div class="partner-box">
-                        <p>한국장애인고용공단</p>
+                    <div class="partner-box partner-with-image">
+                        <img src="{{ url_for('static', filename='image/장애인고용.png') }}" alt="고용노동부" class="partner-logo">
                     </div>
                 </a>
             </div>
