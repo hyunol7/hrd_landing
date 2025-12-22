@@ -1233,7 +1233,7 @@ body {
 
 /* 교육시간 비교표 */
 .education-time-table {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 60px auto 0;
     background: white;
     border-radius: 15px;
