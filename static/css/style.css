@@ -1124,6 +1124,21 @@ body {
     border-radius: 10px;
 }
 
+.advantage-image2 {
+    width: 100%;
+    max-width: 520px;      /* ✅ 더 크게 보이게 (원하시면 600도 가능) */
+    margin-top: 10px;
+}
+
+.advantage-image2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+}
+
+
+
 .advantage-card {
     background: white;
     border: 2px solid #e0e0e0;
@@ -1508,11 +1523,12 @@ body {
     background: white;
 }
 
-.courses-grid {
+.courses-grid{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
+    align-items: stretch;
 }
 
 .course-card {
@@ -1521,8 +1537,10 @@ body {
     border-radius: 15px;
     border: 2px solid #e0e0e0;
     transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ✅ 이미지 가운데 */
 }
-
 .course-card:hover {
     border-color: #0052a3;
     box-shadow: 0 5px 20px rgba(0,82,163,0.2);
