@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HRD코리아 - 관리감독자교육</title>
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="HRD코리아 - 관리감독자교육">
+    <meta property="og:description" content="기업 의무 교육을 한 곳에서 쉽고 편리하게 들을 수 있습니다. 관리감독자 교육, 산업안전보건교육 전문">
+    <meta property="og:image" content="{{ base_url }}{{ url_for('static', filename='image/og_image.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="{{ base_url }}">
+    <meta property="og:site_name" content="HRD코리아">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HRD코리아 - 관리감독자교육">
+    <meta name="twitter:description" content="기업 의무 교육을 한 곳에서 쉽고 편리하게 들을 수 있습니다. 관리감독자 교육, 산업안전보건교육 전문">
+    <meta name="twitter:image" content="{{ base_url }}{{ url_for('static', filename='image/og_image.png') }}">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -376,6 +393,14 @@
         </div>
     </section>
 
+        <!-- 문의 폼 섹션 -->
+        <section id="contact-section" class="contact-section">
+            <div class="form-container">
+                <h2 class="section-title">관리감독자교육 신청서</h2>
+                <p class="form-subtitle">(※ 설문지를 작성해주시면, 확인 후, <br class="mobile-br">교육컨설턴트가 연락드릴예정입니다.)</p>
+            </div>
+        </section>
+
     <!-- 맨 아래 상담문의 섹션 -->
     <section id="question" class="bottom-consultation-section">
         <div class="container">
@@ -442,9 +467,10 @@
         </div>
     </div>
 
+    
 
-    <!-- 왼쪽 탭 버튼 (팝업 닫혔을 때 표시) -->
-    <button class="popup-tab-btn" id="popupTab" onclick="openConsultPopup()" style="display: none;">
+     <!-- 왼쪽 탭 버튼 (팝업 닫혔을 때 표시) -->
+     <button class="popup-tab-btn" id="popupTab" onclick="openConsultPopup()" style="display: none;">
         <span>상담<br>문의</span>
     </button>
 
@@ -476,7 +502,7 @@
                     
                     <div class="popup-form-group">
                         <label for="inquiryContent">4. 문의사항</label>
-                        <textarea id="inquiryContent" name="inquiry_content" rows="4" placeholder="문의하실 내용을 입력하세요 (선택사항)"></textarea>
+                        <textarea name="inquiry_content" rows="4" placeholder="문의하실 내용을 입력하세요 (선택사항)"></textarea>
                     </div>
                     
                     <div class="popup-privacy">

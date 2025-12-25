@@ -17,6 +17,14 @@ if SUPABASE_URL and SUPABASE_KEY:
     except:
         pass
 
+# 배포 URL 설정 (환경변수 또는 기본값)
+BASE_URL = os.environ.get('BASE_URL', 'https://hrd-landing.vercel.app')
+
+@app.context_processor
+def inject_base_url():
+    """템플릿에 기본 URL 전달"""
+    return dict(base_url=BASE_URL)
+
 @app.route('/')
 def index():
     """메인 페이지"""

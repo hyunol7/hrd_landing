@@ -203,8 +203,9 @@ body {
     color: #333;
     position: relative;
     z-index: 2;
-    max-width: 1000px;
-    margin-top: -40px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .hero-main-title {
@@ -223,10 +224,11 @@ body {
 }
 
 .hero-description {
-    font-size: 1.3rem;
-    color: #555;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
     line-height: 1.6;
+    text-align: center;
 }
 
 .hero-cta-btn {
@@ -308,8 +310,8 @@ body {
     }
     
     .hero-description {
-        font-size: 1.1rem;
-        margin-bottom: 28px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
     }
     
     .hero-education-boxes {
@@ -339,9 +341,9 @@ body {
     }
     
     .big-slogan {
-        font-size: 2.5rem;
-        margin-top: 20px;
-        margin-bottom: -10px;
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 30px;
         line-height: 1.2;
     }
     
@@ -359,8 +361,8 @@ body {
     }
     
     .hero-description {
-        font-size: 1rem;
-        margin-bottom: 25px;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
     }
     
     .hero-cta-btn {
@@ -402,9 +404,9 @@ body {
     }
     
     .big-slogan {
-        font-size: 2rem;
-        margin-top: 15px;
-        margin-bottom: -8px;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 20px;
     }
     
     .company-name-spacer {
@@ -421,7 +423,7 @@ body {
     }
     
     .hero-description {
-        font-size: 0.85rem;
+        font-size: 1.2rem;
         margin-bottom: 20px;
     }
     
@@ -465,11 +467,11 @@ body {
 }
 
 .big-slogan {
-    font-size: 6rem;
+    font-size: 3rem;
     font-weight: bold;
-    margin-top: -60px;
-    margin-bottom: -15px;
-    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-bottom: 0;
     text-shadow: 0 4px 8px rgba(0,0,0,0.1);
     animation: float 3s ease-in-out infinite;
     background: linear-gradient(135deg, #ad272e 50%, #0e2a6f 50%);
@@ -478,6 +480,20 @@ body {
     background-clip: text;
     line-height: 1.2;
     overflow: visible;
+    text-align: center;
+    position: relative;
+}
+
+.big-slogan::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #0052a3, #003d7a);
+    border-radius: 2px;
 }
 
 .gradient-com {
@@ -523,10 +539,10 @@ body {
 /* 반응형 - 태블릿 */
 @media (max-width: 1024px) {
     .big-slogan {
-        font-size: 5rem;
-        margin-top: -40px;
-        margin-bottom: -15px;
-        padding-bottom: 12px;
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 50px;
+        padding-bottom: 0;
         line-height: 1.2;
     }
     
@@ -548,10 +564,10 @@ body {
     }
     
     .big-slogan {
-        font-size: 3.5rem;
-        margin-top: -30px;
-        margin-bottom: -12px;
-        padding-bottom: 10px;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 30px;
+        padding-bottom: 0;
         line-height: 1.2;
     }
     
@@ -567,10 +583,10 @@ body {
 
 @media (max-width: 480px) {
     .big-slogan {
-        font-size: 2.5rem;
-        margin-top: -20px;
-        margin-bottom: -8px;
-        padding-bottom: 8px;
+        font-size: 1.8rem;
+        margin-top: 0;
+        margin-bottom: 30px;
+        padding-bottom: 0;
         line-height: 1.2;
     }
     
@@ -1492,11 +1508,23 @@ body {
 }
 
 .section-title {
-    font-size: 2.2rem;
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #333;
     text-align: center;
-    margin-bottom: 20px;
-    color: #0052a3;
-    font-weight: 700;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #0052a3, #003d7a);
+    border-radius: 2px;
 }
 
 .section-subtitle {
@@ -1740,23 +1768,253 @@ body {
     line-height: 1.8;
 }
 
+/* 문의 폼 섹션 */
+.contact-section {
+    padding: 60px 0 10px 0;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.contact-section .section-title {
+    color: #333;
+}
+
+/* 폼 추가 스타일 */
+.form-note {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 5px 0 15px 0;
+    font-style: italic;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.05rem;
+    color: #333;
+    padding: 16px 20px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.checkbox-item:hover {
+    border-color: #d32f2f;
+    box-shadow: 0 2px 8px rgba(211, 47, 47, 0.1);
+}
+
+.checkbox-item input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 28px;
+    height: 28px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-right: 15px;
+    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.checkbox-item input[type="checkbox"]:checked + .checkmark {
+    background: #d32f2f;
+    border-color: #d32f2f;
+    transform: scale(1.1);
+}
+
+.checkbox-item input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.checkbox-item:has(input[type="checkbox"]:checked) {
+    background: #f0f4ff;
+    border-color: #d32f2f;
+    color: #d32f2f;
+    font-weight: 500;
+}
+
+@keyframes checkboxPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1.1); }
+}
+
+.privacy-group {
+    border-top: 2px solid #e0e0e0;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.privacy-content {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.privacy-section {
+    margin-bottom: 20px;
+}
+
+.privacy-section h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.privacy-section p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.privacy-note {
+    font-size: 0.85rem !important;
+    color: #888 !important;
+    font-style: italic;
+}
+
+.privacy-checkbox {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #d32f2f;
+    font-weight: 500;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.form-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.contact-form {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #333;
+    text-align: left;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.1);
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.submit-btn {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #5a6fd8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(173, 39, 46, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.btn-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
 /* 맨 아래 상담문의 섹션 */
 .bottom-consultation-section {
     background: #f8f9fa;
-    padding: 80px 20px;
+    padding: 40px 20px 80px 20px; /* 🔽 +10px */
 }
 
 .consultation-container {
     display: flex;
-    justify-content: center;
-    gap: 60px;
+    justify-content: flex-start;  /* ✅ 왼쪽부터 채우기 */
+    align-items: stretch;         /* ✅ 높이만큼 늘림 */
+    gap: 20px;                    /* ✅ 60 → 20 */
+    width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    align-items: center;
 }
-
 .consultation-left {
-    text-align: center;
+    flex: 0 0 320px; 
 }
 
 .consultation-left h2 {
@@ -1788,12 +2046,13 @@ body {
 }
 
 .consultation-right {
+    flex: 1;
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
     padding: 40px;
+    max-width: 1800px;
     width: 100%;
-    max-width: 1200px;
 }
 
 .consult-form-container h3 {
@@ -1912,12 +2171,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .consultation-left h2 {
-        font-size: 2rem;
-    }
-    
-    .consult-subtitle {
-        font-size: 1.5rem;
+    .bottom-consultation-section {
+        padding: 50px 15px;
     }
     
     .consultation-right {
@@ -1927,6 +2182,10 @@ body {
     .consult-form-row {
         flex-direction: column;
         gap: 15px;
+    }
+    
+    .consult-form-container h3 {
+        font-size: 1.5rem;
     }
     
     .advantage-card-horizontal {
@@ -1945,15 +2204,7 @@ body {
 
 @media (max-width: 480px) {
     .bottom-consultation-section {
-        padding: 50px 15px;
-    }
-    
-    .consultation-left h2 {
-        font-size: 1.6rem;
-    }
-    
-    .consult-subtitle {
-        font-size: 1.2rem;
+        padding: 40px 15px;
     }
     
     .consultation-right {
@@ -1961,7 +2212,7 @@ body {
     }
     
     .consult-form-container h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 }
 
@@ -2019,12 +2270,12 @@ body {
     background: linear-gradient(135deg, #0052a3, #003d7a);
     color: white;
     border: none;
-    padding: 10px 25px;
+    padding: 16px 24px;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 700;
-    box-shadow: 0 5px 25px rgba(0, 82, 163, 0.5);
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 2px rgba(0, 82, 163, 0.5);
     transition: all 0.3s ease;
     animation: pulse 2s ease-in-out infinite;
     line-height: 1.4;
@@ -2144,8 +2395,8 @@ body {
 }
 
 .popup-header h2 {
-    font-size: 1.1rem;
     margin: 0;
+    font-size: 1.1rem;
     font-weight: 700;
 }
 
@@ -2200,7 +2451,7 @@ body {
 
 .popup-form-group label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-weight: 600;
     color: #333;
     font-size: 0.8rem;
@@ -2230,7 +2481,7 @@ body {
 
 .popup-form-group textarea {
     resize: vertical;
-    min-height: 60px;
+    min-height: 30px;
 }
 
 /* 개인정보 동의 */
@@ -2238,11 +2489,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
     padding: 10px;
     background: #f8f9fa;
-    border-radius: 6px;
     border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    margin-bottom: 10px;
 }
 
 .privacy-checkbox-label {
@@ -2262,21 +2513,18 @@ body {
 }
 
 .privacy-detail-btn {
-    background: none;
     border: 1px solid #0052a3;
+    background: none;
     color: #0052a3;
-    padding: 6px 12px;
+    font-size: 0.8rem;
+    padding: 6px 10px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    white-space: nowrap;
 }
 
 .privacy-detail-btn:hover {
     background: #0052a3;
-    color: white;
+    color: #fff;
 }
 
 .privacy-detail {
@@ -2410,26 +2658,14 @@ body {
 /* 제출 버튼 */
 .popup-submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, #0052a3, #003d7a);
-    color: white;
-    border: none;
     padding: 10px;
+    background: linear-gradient(135deg, #0052a3, #003d7a);
+    color: #fff;
     font-size: 0.9rem;
     font-weight: 700;
+    border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 3px 10px rgba(0, 82, 163, 0.3);
-}
-
-.popup-submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 82, 163, 0.4);
-}
-
-.popup-submit-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
 }
 
 .submit-loading {
@@ -2580,7 +2816,7 @@ body {
     }
     
     .header-container {
-        padding: 10px 20px;
+        padding: 12px 20px;
     }
     
     .logo-image {
@@ -2592,7 +2828,9 @@ body {
     }
     
     .consult-popup {
-        height: calc(100vh - 60px);
+        width: 180px;
+        max-height: calc(100vh - 60px);
+        border-radius: 0 12px 12px 0;
     }
     
     .quick-links {
@@ -2661,7 +2899,7 @@ body {
     }
     
     .section-title {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
     
     .penalty-box h3 {
@@ -2818,7 +3056,7 @@ body {
         padding: 0 8px;
     }
     .header-container {
-        padding: 8px 15px;
+        padding: 10px 15px;
     }
     
     .logo-image {
@@ -2830,7 +3068,7 @@ body {
     }
     
     .consult-popup {
-        height: calc(100vh - 50px);
+        max-height: calc(100vh - 50px);
     }
     
     .hero {
@@ -3002,6 +3240,14 @@ body {
     }
     
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }
+
+
+/* 맨 아래 상담문의 섹션만 container 폭 제한 해제 */
+.bottom-consultation-section .container {
+    max-width: 1238px;
+    width: 100%;
+  }
+  
