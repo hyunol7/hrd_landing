@@ -47,11 +47,21 @@ function closeConsultPopup(event) {
     }
 }
 
-// 개인정보 자세히보기 토글
+// 개인정보 자세히보기 팝업 열기
 function togglePrivacyDetail() {
-    const detail = document.getElementById('privacyDetail');
-    if (detail) {
-        detail.classList.toggle('active');
+    const popup = document.getElementById('privacyPopup');
+    if (popup) {
+        popup.classList.add('active');
+        document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+    }
+}
+
+// 개인정보 팝업 닫기
+function closePrivacyPopup() {
+    const popup = document.getElementById('privacyPopup');
+    if (popup) {
+        popup.classList.remove('active');
+        document.body.style.overflow = ''; // 배경 스크롤 복원
     }
 }
 
@@ -208,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeConsultPopup();
+        closePrivacyPopup();
     }
 });
 
@@ -223,6 +234,47 @@ window.addEventListener('scroll', function() {
             element.style.transform = 'translateY(0)';
         }
     });
+    
+    // 메뉴 활성화 (현재 보이는 섹션에 따라)
+    updateActiveMenu();
+});
+
+// 현재 보이는 섹션에 따라 메뉴 활성화
+function updateActiveMenu() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a[href^="#"]');
+    
+    let currentSection = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        const scrollPosition = window.pageYOffset + 150; // 헤더 높이 고려
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSection = section.getAttribute('id');
+        }
+    });
+    
+    // 모든 메뉴 항목에서 active 클래스 제거
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+    
+    // 현재 섹션에 해당하는 메뉴 항목에 active 클래스 추가
+    if (currentSection) {
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#' + currentSection) {
+                link.classList.add('active');
+            }
+        });
+    }
+}
+
+// 페이지 로드 시 초기 활성화
+window.addEventListener('load', function() {
+    updateActiveMenu();
 });
 
 // 맨 아래 상담 폼 제출 처리
