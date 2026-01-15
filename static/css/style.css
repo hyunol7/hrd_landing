@@ -341,7 +341,7 @@ body {
     }
     
     .big-slogan {
-        font-size: 2.2rem;
+        font-size: 4rem;
         margin-top: 0;
         margin-bottom: 30px;
         line-height: 1.2;
@@ -404,7 +404,7 @@ body {
     }
     
     .big-slogan {
-        font-size: 1.8rem;
+        font-size: 2.8rem;
         margin-top: 0;
         margin-bottom: 20px;
     }
@@ -467,7 +467,7 @@ body {
 }
 
 .big-slogan {
-    font-size: 3rem;
+    font-size: 8rem;
     font-weight: bold;
     margin-top: 0;
     margin-bottom: 50px;
@@ -485,19 +485,11 @@ body {
 }
 
 .big-slogan::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(135deg, #0052a3, #003d7a);
-    border-radius: 2px;
+    display: none;
 }
 
 .gradient-com {
-    background: linear-gradient(135deg, #ad272e 0%, #0e2a6f 100%);
+    background: linear-gradient(135deg, #ad272e 50%, #0e2a6f 50%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -537,9 +529,19 @@ body {
 }
 
 /* 반응형 - 태블릿 */
+@media (max-width: 1200px) {
+    .big-slogan {
+        font-size: 6.5rem;
+        margin-top: 0;
+        margin-bottom: 50px;
+        padding-bottom: 0;
+        line-height: 1.2;
+    }
+}
+
 @media (max-width: 1024px) {
     .big-slogan {
-        font-size: 2.2rem;
+        font-size: 5.5rem;
         margin-top: 0;
         margin-bottom: 50px;
         padding-bottom: 0;
@@ -553,6 +555,26 @@ body {
     
     .company-name-spacer {
         height: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .big-slogan {
+        font-size: 4.5rem;
+        margin-top: 0;
+        margin-bottom: 50px;
+        padding-bottom: 0;
+        line-height: 1.2;
+    }
+}
+
+@media (max-width: 820px) {
+    .big-slogan {
+        font-size: 4rem;
+        margin-top: 0;
+        margin-bottom: 50px;
+        padding-bottom: 0;
+        line-height: 1.2;
     }
 }
 
@@ -620,12 +642,16 @@ body {
 .logo {
     display: flex;
     align-items: center;
+    visibility: visible;
+    opacity: 1;
 }
 
 .logo a {
     display: flex;
     align-items: center;
     text-decoration: none;
+    visibility: visible;
+    opacity: 1;
 }
 
 .logo h1 {
@@ -637,9 +663,13 @@ body {
 .logo-image {
     height: 55px;
     width: auto;
+    max-width: 200px;
     display: block;
+    visibility: visible;
+    opacity: 1;
     cursor: pointer;
     transition: transform 0.3s ease;
+    object-fit: contain;
 }
 
 .logo-image:hover {
@@ -655,7 +685,7 @@ body {
     color: #333;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1rem;
     transition: color 0.3s;
     position: relative;
 }
@@ -2821,6 +2851,10 @@ body {
     
     .logo-image {
         height: 40px;
+    }
+    
+    .nav a {
+        font-size: 0.85rem;
     }
     
     .consult-popup-overlay {
