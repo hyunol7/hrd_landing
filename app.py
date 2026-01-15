@@ -5,7 +5,23 @@ import os
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hrdkorea-secret-key-2025'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hrdkorea_consultations.db'
+
+# Vercel 환경 감지 (VERCEL 환경 변수 또는 /tmp 디렉토리 존재 여부로 확인)
+is_vercel = os.environ.get('VERCEL') == '1' or os.path.exists('/var/task')
+
+if is_vercel:
+    # Vercel 환경: /tmp 디렉토리 사용 (쓰기 가능한 임시 디렉토리)
+    try:
+        os.makedirs('/tmp', exist_ok=True)
+        app.instance_path = '/tmp'
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/hrdkorea_consultations.db'
+    except:
+        # /tmp도 실패하면 메모리 데이터베이스 사용
+        app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+else:
+    # 로컬 환경: 기본 instance 폴더 사용
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///hrdkorea_consultations.db'
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -106,12 +122,15 @@ def get_consultations():
             'message': '데이터 조회 중 오류가 발생했습니다.'
         }), 500
 
-if __name__ == '__main__':
-    # 데이터베이스 초기화
-    with app.app_context():
+# 데이터베이스 초기화 (로컬 및 Vercel 환경 모두)
+with app.app_context():
+    try:
         db.create_all()
         print("✅ 데이터베이스가 초기화되었습니다.")
-    
+    except Exception as e:
+        print(f"⚠️ 데이터베이스 초기화 중 오류: {e}")
+
+if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
     print("\n" + "=" * 60)
     print("🚀 대한안전보건교육원 스타일 랜딩페이지 서버 시작!")
